@@ -5,8 +5,8 @@ import {
 } from '@harnessio/ff-react-client-sdk'
 import Loader from './components/Loader/Loader'
 import ClassComponentWithFlags from './components/ClassComponentWithFlags/ClassComponentWithFlags'
-import css from './App.module.css'
 import FunctionComponentWithFlag from './components/FunctionComponentWithFlag/FunctionComponentWithFlag'
+import css from './App.module.css'
 
 const App: FC = () => {
   const useAsyncMode = window.location.search.includes('async=true')
@@ -33,6 +33,9 @@ const App: FC = () => {
       target={target}
       fallback={<Loader />}
       async={useAsyncMode}
+      options={{
+        cache: true
+      }}
     >
       <article>
         <h1>Feature Flags</h1>
